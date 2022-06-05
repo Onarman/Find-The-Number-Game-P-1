@@ -20,31 +20,31 @@ body{
 }
 .container{
     position: absolute;
-    
+    border: 2px solid red;
     padding: 2rem;
     border-radius: 2rem;
-    opacity: 0.9;
-    height: 30rem;
+    
+    height: 40rem;
     width: 60rem;
-    position: absolute;
     text-align: center;
-    margin-top: 5rem;
-    
-   
-    
+    margin-top: 2rem;
+    background-color: rgb(13, 169, 86);
+    transition: all 2s;   
 }
+
+
 
 .container h1{
     text-align: center;
     color: rgb(219, 197, 197);
 }
 
-.input ,button{
+ button{
     display: block;
     width: 12rem;
     height: 5rem;
     border-radius: 25px;
-    margin-top: 7rem;
+    margin-top: 4rem;
     font-size: 2rem;
     text-align: center;
     font-weight: bold;
@@ -70,7 +70,15 @@ body{
     margin-top: 1rem;
     padding: 1rem;
 }
-
+.input{
+    width: 12rem;
+    height: 5rem;
+    border-radius: 25px;
+    margin-top: 4rem;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
 
 
 

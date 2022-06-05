@@ -5,32 +5,31 @@ window.onload = () =>{
     const attempNumber = document.querySelector(".attempt");
     const resultGame = document.querySelector(".result");
     const restart = document.querySelector(".restart");
-   
-   
+    const container = document.querySelector(".container");
+
     let minNum = 1;
     let maxNum = 100;
     let attempt = 5;
 
     const randomNumber = Math.floor(Math.random()*100+1);
-    // console.log(randomNumber);
+    console.log(randomNumber);
 
     
     
     checkButton.addEventListener("click",() => {
-
-        
-        
+        inputArea.focus();
 
          if (attempt == 0){
             resultGame.innerHTML= "Game Over! Dont give up.";
             checkButton.disabled=true;
             inputArea.disabled=true;
+            attempNumber.style.display="none";
 
         }else if(+ inputArea.value == randomNumber){
             resultGame.innerHTML = "Congratulations"
             checkButton.disabled=true;
             inputArea.disabled=true;
-
+           
         }else if(+ inputArea.value <= 0 || + inputArea.value > 100 || + inputArea.value == ""  ){
             setTimeout(function(){
                 alert("ENTER A VALID NUMBER");
@@ -42,23 +41,24 @@ window.onload = () =>{
             attempNumber.innerHTML = `Total balls : ${attempt}`;
             maxNum = + inputArea.value;
             guessNumber.innerHTML = `(${minNum} and ${maxNum})`;
+            inputArea.value="";
 
         }else if(+inputArea.value < randomNumber ){
             attempt--;
             attempNumber.innerHTML =  `Total balls : ${attempt}`;
             minNum = + inputArea.value;
             guessNumber.innerHTML = `(${minNum} and ${maxNum})`;
-            
+            inputArea.value="";
         }
   
-    })
+    });
 
     
-
+   
     restart.addEventListener("click", () => {
         window.location.reload(false);
 
     });
     
-
 }
+
